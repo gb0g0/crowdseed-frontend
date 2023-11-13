@@ -58,7 +58,7 @@ export default function App() {
     <WalletProvider value={walletProviders}>
       <button
         data-test-id="connect-wallet"
-        className="font-semibold text-[16px] leading-[26px] text-white min-h-[52px] px-4 rounded-[10px] text-white bg-[#8b35d0ff]"
+        className="font-semibold text-[16px] leading-[26px] min-h-[52px] px-4 rounded-[10px] text-white bg-[#8b35d0ff]"
         onClick={toggleWalletModal}
       >
         {activeAddress ? 'Connected' : 'Connect Wallet'}

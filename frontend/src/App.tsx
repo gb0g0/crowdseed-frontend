@@ -10,12 +10,12 @@ function App() {
       </div>
       <div className="flex-1 max-sm:w-full max-w-[1280px] mx-auto sm:pr-5">
         <Navbar />
-        {/* <Routes>
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/Create-campaign" element={<CreateCampaign />} />
           <Route path="/campaign-details/:id" element={<CampaignDetails />} />
-        </Routes> */}
+        </Routes>
       </div>
     </div>
   )

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { menu, search, thirdweb } from '../assets'
+import { logo, menu, search, thirdweb } from '../assets'
 import { navlinks } from '../constants'
-import { Connect, CustomButton } from './'
+import { Connect } from './'
 const Navbar = () => {
   const navigate = useNavigate()
   const [isActive, setIsActive] = useState('dashboard')
@@ -33,7 +33,7 @@ const Navbar = () => {
           }}
           disabled={isWeb3EnableLoading}
         /> */}
-            <Connect />
+        <Connect />
         <Link to="/profile">
           <div className="w-[52px] h-[52px] rounded-full bg-[#2c2f32] flex justify-center items-center cursor-pointer">
             <img src={thirdweb} alt="user" className="w-[60%] h-[60%] object-contain " />
@@ -42,9 +42,9 @@ const Navbar = () => {
       </div>
       {/* small screen navigation */}
       <div className="sm:hidden flex justify-between items-center relative">
-        <div className="w-[40px] h-[40px] rounded-[10px] bg-[#2c2f32] flex justify-center items-center cursor-pointer">
-          <img src={thirdweb} alt="user" className="w-[60%] h-[60%] object-contain" />
-        </div>
+        <a className="w-[40px] h-[40px] rounded-[10px] bg-[#2c2f32] flex justify-center items-center cursor-pointer">
+          <img src={logo} alt="user" className="w-[60%] h-[60%] object-contain" />
+        </a>
         <img
           src={menu}
           alt="menu"
@@ -72,7 +72,7 @@ const Navbar = () => {
                   alt={link.name}
                   className={`w-[24px]  h-[24px] object-contain ${isActive === link.name ? 'grayscale-0' : 'grayscale'}`}
                 />
-                <p className={`ml-[20px] font-semibold text-[14px] ${isActive === link.name ? 'text-[#1dc071]' : 'text-[#808191]'}`}>
+                <p className={`ml-[20px] font-semibold text-[14px] ${isActive === link.name ? 'text-[#8b35d0ff]' : 'text-[#808191]'}`}>
                   {link.name}
                 </p>
               </li>
