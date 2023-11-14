@@ -6,6 +6,7 @@ import ErrorBoundary from './components/ErrorBoundary'
 // import './index.css'
 import './styles/main.css'
 // import { StateContextProvider } from "./context";
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Router>

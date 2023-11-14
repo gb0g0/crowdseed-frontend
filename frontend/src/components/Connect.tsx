@@ -1,7 +1,7 @@
 import { DeflyWalletConnect } from '@blockshake/defly-connect'
 import { DaffiWalletConnect } from '@daffiwallet/connect'
 import { PeraWalletConnect } from '@perawallet/connect'
-import { PROVIDER_ID, ProvidersArray, WalletProvider, useInitializeProviders, useWallet } from '@txnlab/use-wallet'
+import { PROVIDER_ID, ProvidersArray, useInitializeProviders, useWallet } from '@txnlab/use-wallet'
 import algosdk from 'algosdk'
 import { useState } from 'react'
 import { getAlgodConfigFromViteEnvironment, getKmdConfigFromViteEnvironment } from '../utils/network/getAlgoClientConfigs'
@@ -55,7 +55,8 @@ export default function App() {
   })
 
   return (
-    <WalletProvider value={walletProviders}>
+    // <WalletProvider value={walletProviders}>
+    <>
       <button
         data-test-id="connect-wallet"
         className="font-semibold text-[16px] leading-[26px] min-h-[52px] px-4 rounded-[10px] text-white bg-[#8b35d0ff]"
@@ -64,6 +65,7 @@ export default function App() {
         {activeAddress ? 'Connected' : 'Connect Wallet'}
       </button>
       <ConnectWallet openModal={openWalletModal} closeModal={toggleWalletModal} />
-    </WalletProvider>
+    </>
+    // </WalletProvider>
   )
 }
