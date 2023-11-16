@@ -1,7 +1,15 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { money } from '../assets'
-import { CrowdSeedAdd_campaign, FormField, Loader } from '../components'
+import {
+  CrowdSeedAdd_campaign,
+  CrowdSeedFund_campaign,
+  CrowdSeedGet_campaign,
+  CrowdSeedRead_campaigns,
+  CrowdSeedRead_owner,
+  FormField,
+  Loader,
+} from '../components'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as algokit from '@algorandfoundation/algokit-utils'
@@ -140,6 +148,33 @@ const CreateCampaign = () => {
           </div>
         </div>
       </form>
+      <CrowdSeedRead_campaigns
+        buttonClass="btn m-2"
+        buttonLoadingNode={<span className="loading loading-spinner" />}
+        buttonNode="read_campaigns"
+        typedClient={typedClient}
+      />
+      <CrowdSeedGet_campaign
+        buttonClass="btn m-2"
+        buttonLoadingNode={<span className="loading loading-spinner" />}
+        buttonNode="Call get_campaign"
+        typedClient={typedClient}
+        new_camp={'camp1'}
+      />
+      <CrowdSeedFund_campaign
+        buttonClass="btn m-2"
+        buttonLoadingNode={<span className="loading loading-spinner" />}
+        buttonNode="Call fund_campaign"
+        typedClient={typedClient}
+        txn={10}
+        new_camp={'camp1'}
+      />
+      <CrowdSeedRead_owner
+        buttonClass="btn m-2"
+        buttonLoadingNode={<span className="loading loading-spinner" />}
+        buttonNode="Call read_owner"
+        typedClient={typedClient}
+      />
     </div>
   )
 }

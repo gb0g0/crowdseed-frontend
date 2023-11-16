@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { ReactNode, useState } from 'react'
-import { CrowdSeed, CrowdSeedClient } from '../contracts/DaoClient'
+import { CrowdSeed, CrowdSeedClient } from '../contracts/crowdseedClient'
 import { useWallet } from '@txnlab/use-wallet'
 
 /* Example usage
@@ -13,7 +13,7 @@ import { useWallet } from '@txnlab/use-wallet'
   new_camp={new_camp}
 />
 */
-type CrowdSeedFund_campaignArgs = Dao['methods']['fund_campaign(pay,string)void']['argsObj']
+type CrowdSeedFund_campaignArgs = CrowdSeed['methods']['fund_campaign(pay,string)void']['argsObj']
 
 type Props = {
   buttonClass: string
@@ -32,7 +32,7 @@ const CrowdSeedFund_campaign = (props: Props) => {
   const callMethod = async () => {
     setLoading(true)
     console.log(`Calling fund_campaign`)
-    await props.typedClient.fund_campaign(
+    await props.typedClient.fundCampaign(
       {
         txn: props.txn,
         new_camp: props.new_camp,

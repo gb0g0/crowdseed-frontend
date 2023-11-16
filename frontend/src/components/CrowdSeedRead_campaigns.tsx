@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
-import { ReactNode, useState } from 'react'
-import { CrowdSeed, CrowdSeedClient } from '../contracts/DaoClient'
 import { useWallet } from '@txnlab/use-wallet'
+import { ReactNode, useState } from 'react'
+import { CrowdSeedClient } from '../contracts/crowdseedClient'
 
 /* Example usage
 <CrowdSeedRead_campaigns
@@ -26,10 +26,8 @@ const CrowdSeedRead_campaigns = (props: Props) => {
   const callMethod = async () => {
     setLoading(true)
     console.log(`Calling read_campaigns`)
-    await props.typedClient.read_campaigns(
-      {},
-      { sender },
-    )
+    const responds = await props.typedClient.readCampaigns({}, { sender })
+    console.log('responds', responds)
     setLoading(false)
   }
 
