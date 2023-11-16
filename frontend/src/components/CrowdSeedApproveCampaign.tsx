@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-console */
-import { ReactNode, useState } from 'react'
-import { CrowdSeed, CrowdSeedClient } from '../contracts/DaoClient'
 import { useWallet } from '@txnlab/use-wallet'
+import { useState } from 'react'
 
 /* Example usage
 <CrowdSeedApproveCampaign
@@ -12,17 +12,17 @@ import { useWallet } from '@txnlab/use-wallet'
   new_camp={new_camp}
 />
 */
-type CrowdSeedApproveCampaignArgs = Dao['methods']['approveCampaign(string)(string,string,string,uint64,uint64,uint64,address,bool)']['argsObj']
+// type CrowdSeedApproveCampaignArgs = Dao['methods']['approveCampaign(string)(string,string,string,uint64,uint64,uint64,address,bool)']['argsObj']
 
-type Props = {
-  buttonClass: string
-  buttonLoadingNode?: ReactNode
-  buttonNode: ReactNode
-  typedClient: CrowdSeedClient
-  new_camp: CrowdSeedApproveCampaignArgs['new_camp']
-}
+// type Props = {
+//   buttonClass: string
+//   buttonLoadingNode?: ReactNode
+//   buttonNode: ReactNode
+//   typedClient: CrowdSeedClient
+//   new_camp: CrowdSeedApproveCampaignArgs['new_camp']
+// }
 
-const CrowdSeedApproveCampaign = (props: Props) => {
+const CrowdSeedApproveCampaign = (props: any) => {
   const [loading, setLoading] = useState<boolean>(false)
   const { activeAddress, signer } = useWallet()
   const sender = { signer, addr: activeAddress! }

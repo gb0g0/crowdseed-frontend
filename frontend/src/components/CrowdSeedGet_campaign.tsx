@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-console */
 import * as algokit from '@algorandfoundation/algokit-utils'
 import { useWallet } from '@txnlab/use-wallet'
-import { ReactNode, useState } from 'react'
-import { CrowdSeed, CrowdSeedClient } from '../contracts/crowdseedClient'
+import { useState } from 'react'
 import { getAlgodConfigFromViteEnvironment } from '../utils/network/getAlgoClientConfigs'
 
 /* Example usage
@@ -14,16 +14,16 @@ import { getAlgodConfigFromViteEnvironment } from '../utils/network/getAlgoClien
   new_camp={new_camp}
 />
 */
-type CrowdSeedGet_campaignArgs =
-  CrowdSeed['methods']['get_campaign(string)(string,string,string,uint64,uint64,uint64,address,bool)']['argsObj']
+// type CrowdSeedGet_campaignArgs =
+//   CrowdSeed['methods']['get_campaign(string)(string,string,string,uint64,uint64,uint64,address,bool)']['argsObj']
 
-type Props = {
-  buttonClass: string
-  buttonLoadingNode?: ReactNode
-  buttonNode: ReactNode
-  typedClient: CrowdSeedClient
-  new_camp: CrowdSeedGet_campaignArgs['new_camp']
-}
+// type Props = {
+//   buttonClass: string
+//   buttonLoadingNode?: ReactNode
+//   buttonNode: ReactNode
+//   typedClient: CrowdSeedClient
+//   new_camp: CrowdSeedGet_campaignArgs['new_camp']
+// }
 
 const CrowdSeedGet_campaign = (props: any) => {
   const [loading, setLoading] = useState<boolean>(false)

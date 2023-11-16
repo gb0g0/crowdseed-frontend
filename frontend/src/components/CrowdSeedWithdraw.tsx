@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-console */
-import { ReactNode, useState } from 'react'
-import { CrowdSeed, CrowdSeedClient } from '../contracts/DaoClient'
 import { useWallet } from '@txnlab/use-wallet'
+import { useState } from 'react'
 
 /* Example usage
 <CrowdSeedWithdraw
@@ -12,17 +12,17 @@ import { useWallet } from '@txnlab/use-wallet'
   amount={amount}
 />
 */
-type CrowdSeedWithdrawArgs = Dao['methods']['withdraw(uint64)void']['argsObj']
+// type CrowdSeedWithdrawArgs = Dao['methods']['withdraw(uint64)void']['argsObj']
 
-type Props = {
-  buttonClass: string
-  buttonLoadingNode?: ReactNode
-  buttonNode: ReactNode
-  typedClient: CrowdSeedClient
-  amount: CrowdSeedWithdrawArgs['amount']
-}
+// type Props = {
+//   buttonClass: string
+//   buttonLoadingNode?: ReactNode
+//   buttonNode: ReactNode
+//   typedClient: CrowdSeedClient
+//   amount: CrowdSeedWithdrawArgs['amount']
+// }
 
-const CrowdSeedWithdraw = (props: Props) => {
+const CrowdSeedWithdraw = (props: any) => {
   const [loading, setLoading] = useState<boolean>(false)
   const { activeAddress, signer } = useWallet()
   const sender = { signer, addr: activeAddress! }

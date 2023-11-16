@@ -7,7 +7,8 @@ import ErrorBoundary from './components/ErrorBoundary'
 import './styles/main.css'
 // import { StateContextProvider } from "./context";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+// eslint-disable-next-line no-undef
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
       <ErrorBoundary>

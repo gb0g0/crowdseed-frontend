@@ -1,4 +1,4 @@
-import { PROVIDER_ID, ProvidersArray, WalletProvider, useInitializeProviders } from '@txnlab/use-wallet'
+import { PROVIDER_ID, WalletProvider, useInitializeProviders } from '@txnlab/use-wallet'
 import { Route, Routes } from 'react-router-dom'
 import { Navbar, Sidebar } from './components'
 import { CampaignDetails, CreateCampaign, Home, Profile } from './pages'
@@ -9,7 +9,7 @@ import { PeraWalletConnect } from '@perawallet/connect'
 import algosdk from 'algosdk'
 import { getAlgodConfigFromViteEnvironment, getKmdConfigFromViteEnvironment } from './utils/network/getAlgoClientConfigs'
 function App() {
-  let providersArray: ProvidersArray
+  let providersArray
   if (import.meta.env.VITE_ALGOD_NETWORK === '') {
     const kmdConfig = getKmdConfigFromViteEnvironment()
     providersArray = [
